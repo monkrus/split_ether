@@ -1,0 +1,28 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "our project",
+  "main": "1.0.0",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "Serega"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monkrus/split_ether.git"
+  },
+  "keywords": [
+    "ABCD"
+  ],
+  "author": "Arizona Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monkrus/split_ether/issues"
+  },
+  "homepage": "https://github.com/monkrus/split_ether#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.2.0"
+  }
+}
