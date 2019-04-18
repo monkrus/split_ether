@@ -1,0 +1,11 @@
+/ .gitignore
+node_modules/
+build/
+.env
+*.pdf
+*.orig
+.password
+.DS_Store
+snippets
+.ipynb_checkpoints
+.vscode
