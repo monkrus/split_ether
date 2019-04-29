@@ -48,7 +48,7 @@ contract Splitter is Toggled {
     function withdraw() public {
         // Owned has balance = amount from contract 'initialAmount'
         uint amount = balances[msg.sender];
-        // ?????
+        // Force to zero the balance before transfer to avoid re-entrance vulnerability
         balances[msg.sender] = 0;
         // if (amount > 0) then go next line
         require(amount > 0, "No balance available");
