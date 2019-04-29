@@ -14,11 +14,11 @@ impersonating Alice, Bob and Carol, all cooperating on a test net.
 
 # Prerequisites
 
-1. Users:  (A)lice, (B)ob and (C)arol
-2. When `A` sends ETH to `B` and `C`, it splits 50/50
-3. `A` is able to split ETH on the website
-4. We are able to see total balance
-5. We are able to see separate balance of `A`, `B` and `C`.
+- Users:  (A)lice, (B)ob and (C)arol
+- When `A` sends ETH to `B` and `C`, it splits 50/50
+- `A` is able to split ETH on the website
+- We are able to see total balance
+- We are able to see separate balance of `A`, `B` and `C`.
 
 ## Setting up your environment
 
