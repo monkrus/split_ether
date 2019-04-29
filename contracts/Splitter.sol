@@ -9,7 +9,7 @@ contract Splitter is Toggled {
     // uint: amount
     mapping(address => uint) private balances;
 
-    // When A sends Eth - tokens to B and C, it splits 50/50
+    // When A sends ETH tokens to B and C, it splits 50/50
     // Sample event definition: use 'event' keyword and define the parameters
     event LogEthSplitted(
         address indexed from, // msg.sender is sending - 100 ETH
@@ -18,7 +18,7 @@ contract Splitter is Toggled {
         uint initialAmount // total amount = 100 ETH
     );
 
-    // Withdrawal Eth
+    // Withdrawal ETH
     event LogEthWithdrawal(
         address indexed to, // send Eth to B,C
         uint amount // total amount = 100 Eth
@@ -30,13 +30,13 @@ contract Splitter is Toggled {
         require(Alice != address(0), "Address of 'Alice' cannot be empty");
         // Check if address of Alice is NOT empty
         require(msg.value != 0, "Message value cannot be 0");
-        // compare money of owner which was sent
+        // compare money of owner which was sent to him from the contract
         require((msg.value % 2) == 0, "Message value must be even");
-        // Check if our amount can be split in two the same parts
+        // Check if tha amount can be split in two equal parts
         uint amount = msg.value / 2;
-        // Divide amount on 2 parts
+        // Divide amount in 2 parts
         balances[Bob] += amount;
-        // Check how much money Bob has right now = 0[Bob]=50+50
+        // Check how much money Bob has right now , Bob`s balances = (existing)balances + amount(received)
         balances[Alice] += amount;
         // 0[Alice]=50+50
         emit LogEthSplitted(msg.sender, Bob, Alice, msg.value);

@@ -7,8 +7,8 @@ contract('Splitter', accounts => {
     // Setup accounts
     const owner = accounts[0];
     const sender = accounts[1];
-    const receiver1 = accounts[2];
-    const receiver2 = accounts[3];
+    const Bob = accounts[2];
+    const Alice = accounts[3];
 
     let splitterInstance;
 
@@ -21,26 +21,26 @@ contract('Splitter', accounts => {
             // Split sent ether between receivers.
             const amount = 10;
             const txObject = await splitterInstance.split(
-                receiver1, receiver2, {
+                Bob, Alice, {
                 from: sender, value: amount
                 });
             assert(txObject.receipt.status, 'Split operation failed');
 
             // Checking if everything as expected
-            await checkFunds(receiver1, amount/2);
-            await checkFunds(receiver2, amount/2);
+            await checkFunds(Bob, amount/2);
+            await checkFunds(Alice, amount/2);
         });
 
         it('Should split odd number of ether correctly', async () => {
             // Split sent ether between receivers.
             const amount = 11;
-            const txObject = await splitterInstance.split(receiver1, receiver2, {from: sender, value: amount});
+            const txObject = await splitterInstance.split(Bob, Alice, {from: sender, value: amount});
             assert(txObject.receipt.status, 'Split operation failed');
 
             // Checking if everything as expected
             await checkFunds(sender, 1);
-            await checkFunds(receiver1, amount >> 1);
-            await checkFunds(receiver2, amount >> 1);
+            await checkFunds(Bob, amount >> 1);
+            await checkFunds(Alice, amount >> 1);
         });
 
         /**
@@ -110,7 +110,7 @@ contract('Splitter', accounts => {
             await splitterInstance.pause({from: owner});
 
             // Splitting
-            await splitterInstance.split(receiver1, receiver2, {
+            await splitterInstance.split(Bob, Alice, {
                 from: sender,
                 value: 100
             }).should.be.rejectedWith(Error);
@@ -119,30 +119,30 @@ contract('Splitter', accounts => {
             await splitterInstance.resume({from: owner});
 
             // Splitting
-            txObject = await splitterInstance.split(receiver1, receiver2, {from: sender, value: 100});
+            txObject = await splitterInstance.split(Bob, Alice, {from: sender, value: 100});
             assert(txObject.receipt.status, 'Split operation failed when contract was resumed');
         });
 
         it('Should be able to withdraw only when contract is not paused', async () => {
             // Splitting
-            await splitterInstance.split(receiver1, receiver2, {from: sender, value: 100});
+            await splitterInstance.split(Bob, Alice, {from: sender, value: 100});
 
             // Pausing
             await splitterInstance.pause({from: owner});
 
             // Withdrawing
-            await splitterInstance.withdraw({from: receiver1}).should.be.rejectedWith(Error);
+            await splitterInstance.withdraw({from: Bob}).should.be.rejectedWith(Error);
 
             // Resuming
             await splitterInstance.resume({from: owner});
 
             // Withdrawing
-            txObject = await splitterInstance.withdraw({from: receiver1});
+            txObject = await splitterInstance.withdraw({from: Bob});
             assert(txObject.receipt.status, 'Withdrawal failed when contract was resumed');
         });
 
         it('Only owner can kill the contract', async () => {
-            await splitterInstance.kill({from: receiver1}).should.be.rejectedWith(Error);
+            await splitterInstance.kill({from: Bob}).should.be.rejectedWith(Error);
 
             assert.equal(await splitterInstance.getOwner(), owner, 'Contract was not deleted');
 
