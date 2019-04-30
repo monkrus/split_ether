@@ -41,6 +41,11 @@ terminal:
 * Run Ganache on your machine (selct Quickstart)
 * Run `truffle migrate --reset` to migrate the contract.
 
+# Test
+* Write tests in `splitter.test.js`
+* Install locally: `npm install --save-dev chai` and `npm install --save-dev chai-as-promised`
+* Run `truffle test` 
+
 
 # Tip's
 - [event](https://stackoverflow.com/questions/35545625/event-triggering-in-solidity) 
