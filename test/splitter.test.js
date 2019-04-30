@@ -6,7 +6,6 @@ const Splitter = artifacts.require("Splitter");
 
 contract('Splitter', accounts => {
     // Setup accounts
-    const owner = accounts[0];
     const sender = accounts[1];
     const Bob = accounts[2];
     const Alice = accounts[3];
