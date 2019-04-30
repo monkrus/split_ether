@@ -26,26 +26,19 @@ impersonating Alice, Bob and Carol, all cooperating on a test net.
 terminal: 
     * `node -v` 
     * and then `truffle version`
-* Initialize truffle `truffle init`
-* Create package.json file `npm init`
-* Install OpenZeppelin library `npm install openzeppelin-solidity`
-* Create .sol file in the contracts folder.
-* Import from OpenZeppelin libraries using import keyword. 
-    * Please note the importing format is **using forward slashes**. 
-    * If import is highlighted red in your editor
-        * add following to your user settings(e.g. in VSC):
-`"solidity.packageDefaultDependenciesContractsDirectory": ""`,
-`"solidity.packageDefaultDependenciesDirectory": "node_modules"`, 
+* Install [Ganache](https://truffleframework.com/ganache)
+* Initialize truffle `truffle init` to build a basic Truffle project
+* Create package.json file  by typing `npm init`
+*
+* Write contracts in the contracts folder.(Splitter.sol, Owned.sol, Toggled.sol)
 * Modify `truffle-config.js` file (`truffle.js` for Mac). 
-* Run `truffle compile`. 
+* Run `truffle compile` to compile the contract
     * Please check the required version of the Solidity compiler (for all .sol files including imported libraries) 
     * by running `truffle version`. 
     * If needed, run `npm uninstall -g truffle` 
     * and the `npm install -g truffle`
 * Create `2_deploy_token.js` in the migrations folder.
-* Run the blockchain emulator. 
-    * Install `npm install ganache-cli` 
-    * and run it `ganache-cli`.
+* Run Ganache on your machine (selct Quickstart)
 * Run `truffle migrate --reset` to migrate the contract.
 
 
