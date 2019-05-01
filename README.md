@@ -20,7 +20,7 @@ impersonating Alice, Bob and Carol, all cooperating on a test net.
 - We are able to see total balance
 - We are able to see separate balance of `A`, `B` and `C`.
 
-## Setting up your environment
+## Setting up your environment 1
 
 * Check if Node.js and truffle are installed by typing in your 
 terminal: 
@@ -46,7 +46,18 @@ terminal:
 * Install locally: `npm install --save-dev chai` and `npm install --save-dev chai-as-promised`
 * Run `truffle test` 
 
+# Setting up your environment 2
+* Create metacoin_standalone.js file
+* Run `npm test test/metacoin_standalone.js`
+* Run `npm init` ???
+* Run `npm install truffle@5.0.8 --save-dev` ???
+* Create a GUI
 
-# Tip's
+
+
+
+
+
+# Tips
 - [event](https://stackoverflow.com/questions/35545625/event-triggering-in-solidity) 
 
