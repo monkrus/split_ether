@@ -40,12 +40,6 @@ terminal:
 * Run Ganache on your machine (select Quickstart)
 * Run `truffle migrate --reset` to migrate the contract.
 
-<<<<<<< HEAD
-# Test
-* Write tests in `splitter.test.js`
-* Install locally: `npm install --save-dev chai` and `npm install --save-dev chai-as-promised`
-* Run `truffle test` 
-
 # Setting up your environment 2
 * Create metacoin_standalone.js file
 * Run `npm test test/metacoin_standalone.js`
@@ -53,16 +47,12 @@ terminal:
 * Run `npm install truffle@5.0.8 --save-dev` ???
 * Create a GUI
 
-
-
-
-
-
-# Tips
-- [event](https://stackoverflow.com/questions/35545625/event-triggering-in-solidity) 
-
-=======
 ## How to run tests `splitter.test.js`
 * Run Ganache on your machine (select Quickstart)
 * `truffle test` 
->>>>>>> 1076ed2e87de130e19bb05e0fbb7b7ad7517852f
+
+# Test
+* Write tests in `splitter.test.js`
+* Install locally: `npm install --save-dev chai` and `npm install --save-dev chai-as-promised`
+* Run `truffle test` 
+
