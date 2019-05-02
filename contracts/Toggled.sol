@@ -1,10 +1,10 @@
-pragma solidity ^0.5.0;
+pragma solidity >=0.4.21 <0.6.0;
 
 import {Owned} from "./Owned.sol";
 
 contract Toggled is Owned {
 
-    bool private active;
+    bool private active = false;
 
     event LogContractPaused(address indexed performedBy);
     event LogContractResumed(address indexed performedBy);
@@ -30,7 +30,7 @@ contract Toggled is Owned {
         emit LogContractResumed(msg.sender);
     }
 
-    function getStatus() public view returns(bool) {
+    function getStatus() public view returns (bool) {
         return active;
     }
 }
