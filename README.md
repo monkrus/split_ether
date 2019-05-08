@@ -41,13 +41,13 @@ terminal:
 * Run `truffle migrate --reset` to migrate the contract.
 
 # Setting up your environment 2
-* Make a new folder and create `package.json` in it.
-* Run `npm install`
-* Create metacoin_standalone.js file
+* Make a new **App** folder and create `package.json` in it.
+* Run `npm install` on `npm install -g node-pre-gyp`
+* Create a default project `truffle unbox metacoin` 
+* Create `metacoin_standalone.js` file
+* Run `truffle compile`
 * Run `npm test test/metacoin_standalone.js`
-* Run `npm init` ???
-* Run `npm install truffle@5.0.8 --save-dev` ???
-* Create a GUI
+
 
 
 ## How to run tests `splitter.test.js`
