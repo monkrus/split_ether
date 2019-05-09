@@ -9,6 +9,7 @@ How to
     * `$ truffle compile`
     
     
+    
 #### Run the test
 * check that you are still in `app/` directory
     > `$ npm test test/metacoin_standalone.js`
